@@ -56,7 +56,7 @@ body {
 
 .container {
   max-width: 115rem;
-  min-height: 70rem;
+  min-height: 68rem;
   box-shadow: var(--shadow-dark);
   background-color: var(--color-Grey-light-1);
   margin: 8rem auto; }
@@ -74,13 +74,17 @@ body {
   display: flex; }
 
 .sideBar {
-  background-color: var(--color-Grey-dark-1);
+  background-color: var(--color-Grey-dark-3);
   flex: 0 0 18%;
-  color: white; }
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .hotel-view {
-  background-color: orange;
-  flex: 1; }
+  background-color: rgba(177, 176, 174, 0.6);
+  flex: 1;
+  height: 85rem; }
 
 .logo {
   height: 3.25rem;
@@ -156,3 +160,75 @@ body {
     height: 2.4rem;
     border-radius: 50%;
     margin-right: 1rem; }
+
+li {
+  list-style: none; }
+
+.side-nav {
+  list-style: none;
+  font-size: 1.2rem;
+  font-style: uppercase;
+  margin-top: 2rem; }
+  .side-nav__item {
+    text-decoration: none;
+    margin-top: 10px;
+    display: column;
+    justify-content: center;
+    position: relative; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: .4rem; }
+  .side-nav__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2.5px;
+    background-color: var(--color-primary-light);
+    transform: scaleY(0);
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s; }
+  .side-nav__item:hover::before, .side-nav__item--active::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary-light); }
+  .side-nav__link:link, .side-nav__link:visited {
+    display: block;
+    color: var(--color-Grey-light-3);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    position: relative; }
+  .side-nav__link:hover {
+    background-color: var(--color-primary-light); }
+  .side-nav__icon {
+    fill: var(--color-Grey-light-3);
+    margin-right: 10px;
+    width: 25px;
+    height: 20px; }
+
+.legal {
+  font-size: 1rem;
+  color: var(--color-Grey-light-3);
+  text-align: center;
+  padding: 2rem; }
+
+.gallery {
+  display: flex; }
+  .gallery__photo {
+    width: 100%;
+    height: 100%;
+    display: block; }
+
+.overview {
+  display: flex; }
+  .overview__heading {
+    font-weight: 300; }
+  .overview__stars {
+    flex: 1; }
+  .overview__icon-star, .overview__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary); }

@@ -82,8 +82,6 @@
     }
 
     &__icon-box {
-
-
         position: relative;
     }
 
@@ -108,7 +106,6 @@
 
     }
 
-    &__user {}
 
     &__user-photo {
 
@@ -119,3 +116,129 @@
 
 
 }
+
+/////////side Navigation
+li {
+    list-style: none;
+}
+
+.side-nav {
+    list-style: none;
+    font-size: 1.2rem;
+    font-style: uppercase;
+    margin-top: 2rem;
+
+    &__item {
+        text-decoration: none;
+        margin-top: 10px;
+        display: column;
+        justify-content: center;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: .4rem;
+        }
+    }
+
+    &__item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 2.5px;
+        background-color: var(--color-primary-light);
+        transform: scaleY(0);
+        transition: transform .2s, width .4s cubic-bezier(1, 0, 0, 1) .2s;
+
+
+    }
+
+    //the transition:transform above, is the effect delay on the sidebar menu alone with the code below
+    //item before and item :hover::before
+    &__item:hover::before,
+    &__item--active::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &__item:active::before {
+        background-color: var(--color-primary-light);
+    }
+
+    &__link:link,
+    &__link:visited {
+        display: block;
+        color: var(--color-Grey-light-3);
+        text-decoration: none;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+        position: relative;
+    }
+
+    &__link:hover {
+        background-color: var(--color-primary-light);
+    }
+
+
+    &__icon {
+        fill: var(--color-Grey-light-3);
+        margin-right: 10px;
+        width: 25px;
+        height: 20px;
+
+    }
+}
+
+///////Legal footer
+.legal {
+    font-size: 1rem;
+    color: var(--color-Grey-light-3);
+    text-align: center;
+    padding: 2rem;
+}
+
+/////hotel MainArea and Gallery
+.gallery {
+    display: flex;
+
+    &__photo {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+.overview {
+    display: flex;
+
+
+    &__heading {
+        font-weight: 300;
+    }
+
+    &__stars {
+        margin-right: auto;
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+
+    }
+
+    &__location {}
+
+    &__rating {}
+
+    &__rating-average {}
+
+    &__rating-count {}
+}
+
+///button/location
+.btn-inline {}
