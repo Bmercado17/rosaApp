@@ -12,7 +12,7 @@
     height: 7rem;
     display: flex;
     background-color: #fff;
-    border-bottom: var(--color-Grey-light-2);
+    border-bottom: var(--line);
     justify-content: space-between;
     align-items: center;
 }
@@ -30,8 +30,39 @@
     justify-content: space-between;
 }
 
+// main part of the hotel middle part
 .hotel-view {
     background-color: rgba(177, 176, 174, .6);
     flex: 1;
-    height: 85rem;
+    // height: 85rem;
+}
+
+.details {
+    padding: 4rem;
+    display: flex;
+    background-color: var(--color-Grey-light-1);
+    border-bottom: 1.5px solid var(--color-Grey-light-2);
+}
+
+.description {
+    font-size: 1.4rem;
+    background-color: var(--color-Grey-light-4);
+    flex: 0 0 60%;
+    margin-right: 4rem;
+    box-shadow: var(--shadow-dark);
+    padding: 3rem;
+    margin-right: 4rem;
+
+}
+
+// with flex taking 60% (above), and setting the other div to flex 1 it, the one acts as the remaining space avalable 40%;
+
+
+.user-reviews {
+    font-size: 1.4rem;
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-Grey-light-2);
 }
