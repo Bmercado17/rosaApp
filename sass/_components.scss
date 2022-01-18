@@ -8,10 +8,22 @@
 ///search
 .search {
     background-color: var(--color-Grey-light-3);
-    flex: 0 0 40rem;
+    flex: 0 0 40%;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 150px;
+
+    @media only screen and (max-width:$bpoint-xsmall) {
+        order: 1;
+        flex: 0 0 90%;
+        margin: .5rem .5rem;
+        display: flex;
+        justify-content: center;
+        margin-left: 2rem;
+        // margin-right: 1rem;
+
+    }
 
     &__input {
         font-family: inherit;
@@ -19,11 +31,13 @@
         background-color: var(--color-Grey-light-3);
         border: none;
         padding: 0.7rem 2rem;
-        border-radius: 3rem;
+        border-radius: 150px;
         width: 90%;
         margin-right: -3.25rem;
 
+
         &:focus {
+
             outline: none;
             width: 100%;
             background-color: var(--color-Grey-light-4);
@@ -119,6 +133,11 @@ li {
     font-style: uppercase;
     margin-top: 2rem;
 
+    @media only screen and (max-width: $bpoint-medium) {
+        display: flex;
+        margin: 0;
+    }
+
     &__item {
         text-decoration: none;
         margin-top: 10px;
@@ -126,8 +145,16 @@ li {
         justify-content: center;
         position: relative;
 
+        @media only screen and (max-width: $bpoint-medium) {
+            margin: 0;
+        }
+
         &:not(:last-child) {
             margin-bottom: 0.4rem;
+        }
+
+        @media only screen and (max-width: $bpoint-medium) {
+            flex: 1;
         }
     }
 
@@ -165,6 +192,16 @@ li {
         align-items: center;
         z-index: 10;
         position: relative;
+
+        @media only screen and (max-width: $bpoint-medium) {
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        @media only screen and (max-width: $bpoint-xsmall) {
+            flex-direction: column;
+            padding: 1.3rem .3rem;
+        }
     }
 
     &__link:hover {
@@ -176,6 +213,14 @@ li {
         margin-right: 10px;
         width: 25px;
         height: 20px;
+
+        @media only screen and (max-width:$bpoint-xsmall) {
+            margin-bottom: .5rem;
+            width: 1.3rem;
+            height: 1.3rem;
+            margin-right: 0;
+            align-items: center;
+        }
     }
 }
 
@@ -185,6 +230,10 @@ li {
     color: var(--color-Grey-light-3);
     text-align: center;
     padding: 2rem;
+
+    @media only screen and (max-width: $bpoint-medium) {
+        display: none;
+    }
 }
 
 /////hotel MainArea and Gallery
@@ -209,6 +258,11 @@ li {
         letter-spacing: 1px;
         text-transform: uppercase;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width:$bpoint-xsmall) {
+            font-size: 1.7rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars {
@@ -242,16 +296,28 @@ li {
         display: flex;
         align-items: center;
         flex-direction: column;
+
+        @media only screen and (max-width:$bpoint-xsmall) {
+            padding: 0 1.5rem;
+        }
     }
 
     &__rating-average {
         font-size: 2.4rem;
         font-weight: 300;
+
+        @media only screen and (max-width:$bpoint-xsmall) {
+            font-size: 1.8rem;
+        }
     }
 
     &__rating-count {
         font-size: 0.9rem;
         text-transform: uppercase;
+
+        @media only screen and (max-width:$bpoint-xsmall) {
+            font-size: .7rem;
+        }
     }
 }
 
@@ -355,7 +421,9 @@ li {
         margin-right: auto;
     }
 
-    &__friends {}
+    &__friends {
+        display: flex;
+    }
 
     &__photo {
         box-sizing: content-box;
@@ -365,7 +433,7 @@ li {
         border: 2px solid white;
 
         &:not(:last-child) {
-            margin-right: -1.2rem;
+            margin-right: -2rem;
         }
     }
 
@@ -380,6 +448,11 @@ li {
     padding: 2.5rem;
     margin-bottom: 4rem;
     overflow: hidden;
+
+    @media only screen and (max-width: $bpoint-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
 
     &__text {
         margin-bottom: 2rem;
@@ -434,5 +507,68 @@ li {
         line-height: 1;
         z-index: 1;
 
+    }
+}
+
+///////////////call to action section/ button
+.cta {
+    padding: 3rem 0;
+    text-align: center;
+
+    &__book-now {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+///////button part
+.btn {
+    cursor: pointer;
+    position: relative;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 90px;
+    margin-top: 1rem;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    overflow: hidden;
+
+    &__visible {
+        display: inline-block;
+        padding: 2rem 7.5rem;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__invisible {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -100%;
+        padding: 2rem 0;
+        height: 100%;
+        width: 100%;
+        transition: all .5s;
+    }
+
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:hover &__visible {
+        transform: translateY(100%);
+    }
+
+    &:hover &__invisible {
+        top: 0;
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
     }
 }

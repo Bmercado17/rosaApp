@@ -5,6 +5,12 @@
     background-color: var(--color-Grey-light-1);
     margin: 8rem auto;
 
+    @media only screen and (max-width:$bpoint-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
 }
 
 .header {
@@ -15,10 +21,19 @@
     border-bottom: var(--line);
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and (max-width:$bpoint-xsmall) {
+        flex-wrap: wrap;
+        height: 10rem;
+    }
 }
 
 .content {
     display: flex;
+
+    @media only screen and (max-width: $bpoint-medium) {
+        flex-direction: column;
+    }
 }
 
 .sideBar {
@@ -42,6 +57,15 @@
     display: flex;
     background-color: var(--color-Grey-light-1);
     border-bottom: 1.5px solid var(--color-Grey-light-2);
+
+    @media only screen and (max-width: $bpoint-medium) {
+        padding: 2.5rem;
+
+    }
+
+    @media only screen and (max-width: $bpoint-small) {
+        flex-direction: column;
+    }
 }
 
 .description {
@@ -53,6 +77,15 @@
     padding: 3rem;
     margin-right: 4rem;
 
+    @media only screen and (max-width: $bpoint-medium) {
+        padding: 2rem;
+        margin-right: 3.5rem;
+    }
+
+    @media only screen and (max-width: $bpoint-small) {
+        margin-right: 0;
+        margin-bottom: 2.5rem;
+    }
 }
 
 // with flex taking 60% (above), and setting the other div to flex 1 it, the one acts as the remaining space avalable 40%;

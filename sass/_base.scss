@@ -33,6 +33,18 @@ Grey dark 3: #999
     --line: 1.5px solid var(--color-Grey-light-2);
 }
 
+///sass variables
+// 1200px / 16
+// 1100px / 16
+// 900px  / 16
+// 600px / 16 
+// 500px / 16
+$bpoint-largest: 75em;
+$bpoint-large: 68.75em;
+$bpoint-medium: 56.25em;
+$bpoint-small: 37.5em;
+$bpoint-xsmall:31.25em;
+
 * {
     margin: 0;
     padding: 0;
@@ -44,9 +56,14 @@ Grey dark 3: #999
     box-sizing: inherit;
 }
 
+//1rem = 10px, 10px / 16px = 62.5%
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+
+    @media only screen and (max-width: $bpoint-large) {
+        font-size: 50%;
+    }
 }
 
 
